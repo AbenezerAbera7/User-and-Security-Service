@@ -23,7 +23,9 @@ app.use(cookieParser());
 app.use('/api', authRoutes);
 app.use('/admin', adminRoutes);
 
-
+app.use('/test', (req, res) => {
+  return res.send("server running")
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`USER SERVICE is running on port ${PORT}`);
